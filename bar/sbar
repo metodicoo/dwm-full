@@ -1,0 +1,45 @@
+#!/bin/sh
+
+printf "%d\n" $$ > ~/.cache/pidofbar
+
+sec=0
+
+update_vol() {
+    muted=$(pamixer --get-mute)
+    vol=$(pamixer --get-volume)
+    if [ "$muted" = "true" ]; then
+        vol_icon="🔇"
+    elif [ "$vol" -ge 70 ]; then
+        vol_icon="🔊"
+    elif [ "$vol" -ge 30 ]; then
+        vol_icon="🔉"
+    else
+        vol_icon="🔈"
+    fi
+    volume="$vol_icon$vol%"
+}
+
+update_time() {
+    time=$(date "+%I:%M %p - %d %b %Y")
+}
+
+display() {
+    xsetroot -name " $volume | $time "
+}
+
+trap "update_vol; display" USR1
+trap "update_time; display" USR2
+
+update_vol
+update_time
+display
+
+while true; do
+    sleep 1
+    sec=$((sec + 1))
+    if [ $((sec % 5)) -eq 0 ]; then
+        update_time
+        display
+    fi
+done
+
