@@ -65,9 +65,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *screenshooter[] = { "flameshot", "gui", NULL };
 static const char *thunar[] = { "thunar", NULL };
-static const char *volup[]   = { "/home/fra/bar/scripts/volctl", "up", NULL };
-static const char *voldown[] = { "/home/fra/bar/scripts/volctl", "down", NULL };
-static const char *voltoggle[] = { "/home/fra/bar/scripts/volctl", "toggle", NULL };
+static const char *volup[]   = { "$HOME/bar/scripts/volctl", "up", NULL };
+static const char *voldown[] = { "$HOME/bar/scripts/volctl", "down", NULL };
+static const char *voltoggle[] = { "$HOME/bar/scripts/volctl", "toggle", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -122,9 +122,9 @@ static const Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
-	{ ClkStatusText, 0, Button4, spawn, {.v = volup} },     // Scroll su: aumenta volume
-	{ ClkStatusText, 0, Button5, spawn, {.v = voldown} },   // Scroll giù: diminuisce volume
-	{ ClkStatusText, 0, Button1, spawn, {.v = voltoggle} }, // Click sinistro: mute toggle
+	{ ClkStatusText, 0, Button4, spawn, {.v = volup} },
+	{ ClkStatusText, 0, Button5, spawn, {.v = voldown} },
+	{ ClkStatusText, 0, Button1, spawn, {.v = voltoggle} },
 
 };
 
