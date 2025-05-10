@@ -1,7 +1,7 @@
 # Dwm Rice
 The dependencies are only (I think, but I guess if you have errors you know how to fix):
 - libXft
-- libxinerama
+- libXinerama
 
 # Gentoo
 (sudo or doas)
