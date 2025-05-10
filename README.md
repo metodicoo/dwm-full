@@ -2,6 +2,8 @@
 The dependencies are only (I think, but I guess if you have errors you know how to fix):
 - libXft
 - libXinerama
+- pamixer
+- xsetroot
 
 ## Optional Dependencies
 - pipewire
