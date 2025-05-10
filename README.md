@@ -3,14 +3,11 @@ The dependencies are only (I think, but I guess if you have errors you know how 
 - libXft
 - libXinerama
 - pamixer
+- pipewire (for pamixer, and in my setup i use it)
 - xsetroot
 
 ## Optional Dependencies
-- pipewire
-- feh
-- lxrandr
-- picom
-- dbus
+- feh (for the wallpaper in dwm/src/wall/forest.jpg
 
 # Gentoo
 (sudo or doas)
