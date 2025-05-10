@@ -3,6 +3,13 @@ The dependencies are only (I think, but I guess if you have errors you know how 
 - libXft
 - libXinerama
 
+## Optional Dependencies
+- pipewire
+- feh
+- lxrandr
+- picom
+- dbus
+
 # Gentoo
 (sudo or doas)
 ```bash
